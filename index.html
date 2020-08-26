@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripAndTreat</title>
-    <link rel="stylesheet" href="main.css"
+    <h1 style="color:orange;font-size:40px;font-style:Lucida Console;" >Trip And Treat</h1>
+    <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <h1>Let's see if it's working :)</h1>
+    <h2 style="color:#4b7fe0;font-size:25px">Let's see if it's working :)</h2>
     <main id="trip-collection">
         <!--Trips-->
-      </main>
+    </main>
+    <h3 style="color:#4b7fe0;font-size:25px">Let's see where you traveled!!!</h3>
+    <div id="add-card">
+        <form class="add-card">
+            <label>Location:</label>
+            <input type="text" name="location" value="" placeholder = "Enter a location..." class="input-location"/><br>
+            <label>Country:</label>
+            <input type="text" name="country" value="" placeholder = "Enter country..." class="input-country"/><br>
+            <label>Date:</label>
+            <input type="text" name="date" value="" placeholder = "Enter the date..." class="input-date"/><br>
+            <label>Image:</label>
+            <input type="text" name="image_address" value="" placeholder = "Enter an image address..." class="input-image"/><br>
+            <input type="submit" name="submit" value="Submit" class="submit"/><br>
+        </form>
+    </div>
     <!--all the js folders for models to add here-->
    <script src="index.js"></script>
 </body>

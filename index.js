@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {fetchTripInfo()});
 // title.innerHTML = "TEST"
 // card.appendChild(title);
 
-
+//feching data for display
 
 function fetchTripInfo(){
     fetch('http://localhost:3000/trips')
@@ -32,58 +32,55 @@ function displayTrip(trip){
     card.setAttribute("id", `tripId-${trip.id}`);
     tripList.appendChild(card);
     const title = document.createElement("h2");
-    title.innerHTML = `${trip.date}`;
+    title.innerHTML = `${trip.location}  -  ${trip.country},   ${trip.date}`;
     card.appendChild(title);
+
+    const updateButton = document.createElement("button");
+    updateButton.innerText = "Update Trip";
+    updateButton.setAttribute("id", updateButton);
+    card.appendChild(updateButton);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "Delete Trip";
+    deleteButton.setAttribute("id", deleteButton);
+    card.appendChild(deleteButton);
 
     const image = document.createElement("img");
     image.setAttribute("src", trip.image);
     image.setAttribute("class", "trip-image");
     card.appendChild(image);
+    for(i = 0; i<trip.food.length; i++){
+        const food = document.createElement("li");
+        food.setAttribute("id",`food-id-${trip.food[i].id}`);
+        food.innerHTML=`<b>${trip.food[i].name}</b><br> <b>price: </b>$${trip.food[i].price}<br> <b>rating:</b> ${trip.food[i].rating}<br> <b>a brief description:</b>${trip.food[i].description},`;
+        card.appendChild(food)
+    };
 
-    const location = document.createElement("h3");
-    location.setAttribute("id",`location-trip-id-${trip.id}` );
-    location.innerHTML =`${trip.location}`;
-    card.appendChild(location);
+    const addFoodButton = document.createElement("button");
+    addFoodButton.innerText = "Add Food";
+    addFoodButton.setAttribute("id", addFoodButton);
+    card.appendChild(addFoodButton);
 
-    const country = document.createElement("h3");
-    country.setAttribute("id",`country-trip-id-${trip.id}` )
-    country.innerHTML=`${trip.country}`;
-    card.appendChild(country);
+    const updateFoodButton = document.createElement("button");
+    updateFoodButton.innerText = "Update Food";
+    updateFoodButton.setAttribute("id", updateFoodButton);
+    card.appendChild(updateFoodButton);
 
-    const foodNameOne = document.createElement("ul");
-    foodNameOne.setAttribute("id",`food-id-${trip.food[0].id}`);
-    foodNameOne.innerHTML=`${trip.food[0].name}`;
-    card.appendChild(foodNameOne);
-
-    // const foodPrice = document.createElement("li")
-    // foodPrice.innerHTML = `${trip.food[0].price}`
-    // foodName.appendChild(foodPrice);
-    
-
-    
-    // for(let f of trip.food){
-    //    const foodName = document.createElement("ul");
-    //    foodName.setAttribute("id",`food-id-${trip.f.id}`);
-    //    foodName.innerHTML=`${trip.f.name}`;
-    //    card.appendChild(foodName);
-    //    const foodPrice = document.createElement("li")
-    //    foodPrice.innerHTML = `${trip.f.price}`
-    //    foodName.appendChild(foodPrice);
-    //    const foodRating = document.createElement("li")
-    //    foodRating.innerHTML = `${trip.f.rating}`
-    //    foodName.appendChild(foodRating);
-    //    const foodDescription = document.createElement("li")
-    //    foodDescription.innerHTML = `${trip.f.description}`
-    //    foodName.appendChild(foodDescription);
-    //   
-    // };
-
+    const deleteFoodButton = document.createElement("button");
+    deleteFoodButton.innerText = "Delete Food";
+    deleteFoodButton.setAttribute("id", deleteFoodButton);
+    card.appendChild(deleteFoodButton);
 
 
     
     
 };
 
+
+//fetch update
+
+
+//fetch delete
 
 
 
