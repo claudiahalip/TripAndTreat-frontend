@@ -3,7 +3,7 @@ class Trip {
     static all = []
 
 
-    constractor({id, location, country, date, image}) {
+    constructor({id, location, country, date, image}) {
         this.id =id
         this.location = location
         this.country = country
@@ -26,11 +26,12 @@ class Trip {
     }
 
     fullRender(){
-        this.element.innerHTML = `
-        <h2>${this.location}  -  ${this.country},   ${this.date}</h2>
+        this.element.innerHTML = 
+        `<h2>${this.location}  -  ${this.country},   ${this.date}</h2>
         <button class ="update" data-id="${this.id}">Update Trip</button>
         <button class ="delete" data-id="${this.id}">Delete Trip</button>
-        <img scr="${this.image}" class="trip-image">`
+        <img src="${this.image}" class="trip-image">
+        `
         return this.element
     }
 

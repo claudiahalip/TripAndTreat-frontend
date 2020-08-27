@@ -57,7 +57,7 @@ body {
     color: whitesmoke;
     font-size: 12px;
     display: inline-block;
-    justify-self: center;
+    justify-self: center ;
     
     
   }
@@ -68,14 +68,14 @@ body {
     color: #e04b52;
   }
   
-  .container {
+  /* .container {
     padding: 1rem;
     width: stretch;
     height: auto;
     display: none;
     background: #515DA2;
     opacity: .8;
-  }
+  } */
   
   .add-card {
     width: 80%
@@ -110,5 +110,8 @@ body {
     margin: 3px;
   }
 
-  #updatebButton, #deleteBuutton {display: inline-block;}
+  #updatebButton, #deleteBuutton {display: inline;}
+  .addFoodButton, .upadteFoodButton, .deleteFoodButton{
+    display: inline;
+  }
   

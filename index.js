@@ -1,5 +1,5 @@
 const tripAdapter=new TripsAdapter;
-
+//document.addEventListener("DOMContentLoaded", () => {fetchTripInfo()});
 document.addEventListener("DOMContentLoaded", () => {tripAdapter.fetchTripInfo()});
 
 
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {tripAdapter.fetchTripInfo()
 //     image.setAttribute("src", trip.image);
 //     image.setAttribute("class", "trip-image");
 //     card.appendChild(image);
+
 //     for(i = 0; i<trip.food.length; i++){
 //         const food = document.createElement("li");
 //         food.setAttribute("id",`food-id-${trip.food[i].id}`);
@@ -54,17 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {tripAdapter.fetchTripInfo()
 
 //     const addFoodButton = document.createElement("button");
 //     addFoodButton.innerText = "Add Food";
-//     addFoodButton.setAttribute("id", addFoodButton);
+//     addFoodButton.setAttribute("class", addFoodButton);
 //     card.appendChild(addFoodButton);
 
 //     const updateFoodButton = document.createElement("button");
 //     updateFoodButton.innerText = "Update Food";
-//     updateFoodButton.setAttribute("id", updateFoodButton);
+//     updateFoodButton.setAttribute("class", updateFoodButton);
 //     card.appendChild(updateFoodButton);
 
 //     const deleteFoodButton = document.createElement("button");
 //     deleteFoodButton.innerText = "Delete Food";
-//     deleteFoodButton.setAttribute("id", deleteFoodButton);
+//     deleteFoodButton.setAttribute("class", deleteFoodButton);
 //     card.appendChild(deleteFoodButton);
 
 
