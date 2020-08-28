@@ -2,7 +2,7 @@ class Food {
 
     static all = []
 
-    constructor(id, name, price, rating, description, trip_id) {
+    constructor({id, name, price, rating, description, trip_id}) {
         this.id = id,
         this.name = name,
         this.price = price,

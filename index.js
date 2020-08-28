@@ -1,6 +1,14 @@
 const tripAdapter=new TripsAdapter;
+const tripForm = document.getElementById("form-add-trip")
+
 //document.addEventListener("DOMContentLoaded", () => {fetchTripInfo()});
-document.addEventListener("DOMContentLoaded", () => {tripAdapter.fetchTripInfo()});
+
+document.addEventListener("DOMContentLoaded", () => {
+    tripAdapter.fetchTripInfo()
+    const tripForm = document.getElementById("form-add-trip")
+    tripForm.addEventListener("submit", tripAdapter.createNewTrip)
+    
+});
 
 
 //feching data for display
