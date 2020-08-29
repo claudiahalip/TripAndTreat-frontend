@@ -49,37 +49,34 @@ class TripsAdapter{
     //update trip
 
     updateTrip(id){
-        e.preventDefault()
-        debugger
-        const location = document.getElementById('update-trip-location').value
-        const country = document.getElementById('update-trip-country').value
-        const date = document.getElementById('update-trip-date').value
-        const image = document.getElementById('update-trip-image').value
+       
+        const location = document.getElementById(`update-trip-location-${id}`).value
+        const country = document.getElementById(`update-trip-country-${id}`).value
+        const date = document.getElementById(`update-trip-date-${id}`).value
+        const image = document.getElementById(`update-trip-image-${id}`).value
         let newTripObj = {
             location,
             country,
             date,
             image
         }
+        //debugger
 
         let configObj = {
             method: "PATCH",
             headers: {
-                "Content_Type": "application/json",
-                Accepts: "application/json"
+                "Content-Type": "application/json",
+                Accept: "application/json"
             },
             body: JSON.stringify(newTripObj)
         }
-        fetch(this.baseUrl + `/${id}`, configObj)
+        fetch(`http://localhost:3000/trips/${id}`, configObj)
         .then(resp => resp.json())
         .then(json => {
+            
             let trip = Trip.all.find( (t)=> t.id === json.id)
-            trip.attachToDom()
+            trip.updateTripOnDom(json)
         })
-        
-
-
-
     }
 
     //delete trip

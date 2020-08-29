@@ -28,10 +28,12 @@ class Trip {
     
     fullRender(){
         this.element.innerHTML = 
-        `<h2 id="data-id="${this.id}">${this.location}  -  ${this.country},   ${this.date}</h2>
+        `<h2 id="${this.id}">${this.location}  -  ${this.country},  ${this.date}</h2>
         <button class ="update" id="${this.id}">Update Trip</button>
         <button class ="delete" id="${this.id}">Delete Trip</button>
         <img src="${this.image}" class="trip-image" data-id="${this.id}">
+        <button class ="add-food" id= "add-food">Add Food</button>
+        
         `
         return this.element
     }
@@ -67,8 +69,13 @@ class Trip {
         }else if(e.target.className ==="update"){
             let id = e.target.id
             e.target.className = "save"
-            e.target.innerText = "Save"
+            e.target.innerText = "Save Trip"
             this.addTripFieldsForUpdate(id)
+        }else if(e.target.className === 'save'){
+            let id = e.target.id
+            e.target.className = "update"
+            e.target.innerText = "Update Trip"
+            tripAdapter.updateTrip(id)
         }
     }
 
@@ -79,17 +86,29 @@ class Trip {
     addTripFieldsForUpdate(id){
         let trip = Trip.findById(id)
         let updateForm = `
-        
-        <input type="text" value="${trip.location} name="location" id = "update-trip-location">
-        <input type="text" value="${trip.country} name="country" id = "update-trip-country">
-        <input type="text" value="${trip.date} name="date" id = "update-trip-date">
-        <input type="text" value="${trip.image} name="image" id = "update-trip-image">
+        <label>Location:</label>
+        <input type="text" value="${trip.location}" name = "location" id = 'update-trip-location-${id}'>
+        <label>Country:</label>
+        <input type="text" value="${trip.country}" name="country" id = "update-trip-country-${id}">
+        <label>Date:</label>
+        <input type="text" value="${trip.date}" name="date" id = "update-trip-date-${id}">
+        <label>Image address:</label>
+        <input type="text" value="${trip.image}" name="image" id = "update-trip-image-${id}">
         
         `
         let updateFormDiv = document.createElement("div")
         updateFormDiv.id = `update-form-${id}`
         updateFormDiv.innerHTML = updateForm
 
-        trip.element.append(updateForm)
+        trip.element.append(updateFormDiv)
+    }
+
+    updateTripOnDom({location,country,date,image}){
+        this.location = location
+        this.country = country
+        this.date = date
+        this.image = image
+        this.fullRender()
+
     }
 }  

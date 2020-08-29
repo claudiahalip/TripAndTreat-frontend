@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h2 style="color:#4b7fe0;font-size:25px">Let's see if it's working :)</h2>
+    <h2 style="color:#4b7fe0;font-size:20px">"I am not a great cook, I am not a great artist, but I love art, and I love food, so I am the perfect traveller." Michael Palin</h2>
     <main id="trip-collection">
         <!--Trips-->
     </main>
@@ -28,6 +28,20 @@
         </form>
     </div>
     
+    <div id="add-food" hidden="true">
+        <form class="add-food" id ="add-food-form">
+            <label>Name:</label>
+            <input type="text" name="name" value="" placeholder = "Enter a name..." class="input-name" id="food-name"/><br>
+            <label>Price:</label>
+            <input type="text" name="price" value="" placeholder = "Enter the price..." class="input-price" id="food-price"/><br>
+            <label>Rating:</label>
+            <input type="text" name="rating" value="" placeholder = "Rating between 1-5..." class="input-rating" id="food-rating"/><br>
+            <label>Description:</label>
+            <input type="text" name="description" value="" placeholder = "Short descriprion..." class="input-description" id="food-description"/><br>
+            <input type="submit" name="submit" value="Submit" class="submit"/><br>
+        </form>
+    </div>
+
    <script src="src/trip.js" type="text/javascript"></script>
    <script src="src/food.js" type="text/javascript"></script>
    <script src="src/tripsAdapter.js" type="text/javascript"></script>

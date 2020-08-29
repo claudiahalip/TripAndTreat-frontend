@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: roboto;
   }
-  h1 {
+  h1, h2 {
     position: center;
     text-align: center;
     font-family: aileron
@@ -68,14 +68,14 @@ body {
     color: #e04b52;
   }
   
-  /* .container {
+  .container {
     padding: 1rem;
     width: stretch;
     height: auto;
     display: none;
     background: #515DA2;
     opacity: .8;
-  } */
+  }
   
   .add-card {
     width: 80%

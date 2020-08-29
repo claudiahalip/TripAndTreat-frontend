@@ -1,15 +1,25 @@
 const tripAdapter=new TripsAdapter;
-const tripForm = document.getElementById("form-add-trip")
+const foodAdapter = new FoodsAdapter;
 
-//document.addEventListener("DOMContentLoaded", () => {fetchTripInfo()});
+const tripForm = document.getElementById("form-add-trip")
+const addFoodButton = document.getElementById("add-food")
+
+function addFoodForm(e){
+    e.target.hidden = true
+    const addFoodForm = document.getElementById("add-food-form")
+    addFoodForm.hidden = false
+
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
     tripAdapter.fetchTripInfo()
-    const tripForm = document.getElementById("form-add-trip")
     tripForm.addEventListener("submit", tripAdapter.createNewTrip)
-    
+    addFoodButton.addEventListener("click", addFoodForm)
 });
 
+
+//document.addEventListener("DOMContentLoaded", () => {fetchTripInfo()});
 
 //feching data for display
 
