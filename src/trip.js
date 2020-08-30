@@ -32,7 +32,7 @@ class Trip {
         <button class ="update" id="${this.id}">Update Trip</button>
         <button class ="delete" id="${this.id}">Delete Trip</button>
         <img src="${this.image}" class="trip-image" data-id="${this.id}">
-        <button class ="add-food" id= "add-food">Add Food</button>
+        <button class ="add-food" id="${this.id}">Add Food</button>
         
         `
         return this.element
@@ -42,11 +42,11 @@ class Trip {
         //debugger
         let arrFoodObj = arrFoods.map( f => new Food(f))
         const p = document.createElement("p");
-        p.setAttribute("class", "food-list")
+        p.setAttribute("class", `food-list-id-${this.id}`)
         for(let food of arrFoodObj){
-        let li = document.createElement("li")
-        li.innerHTML = `<b>${food.name}</b><br> <b>price: </b>$${food.price}<br> <b>rating:</b> ${food.rating}<br> <b>a brief description:</b>${food.description}`
-        p.appendChild(li)
+            let li = document.createElement("li")
+            li.innerHTML = `<b>${food.name}</b><br> <b>price: </b>$${food.price}<br> <b>rating:</b> ${food.rating}<br> <b>a brief description:</b>${food.description}`
+            p.appendChild(li)
         }
         this.element.appendChild(p)
         return this.element
@@ -76,7 +76,20 @@ class Trip {
             e.target.className = "update"
             e.target.innerText = "Update Trip"
             tripAdapter.updateTrip(id)
-        }
+        }else if(e.target.className === "add-food"){
+            let id = e.target.id
+            e.target.className = "save-food"
+            e.target.innerText = "Save Food"
+            this.addFoodForm(id)
+        }else if(e.target.className === "save-food"){
+            let id = e.target.id
+            e.target.className = "add-food"
+            e.target.innerText = "Add Food"
+            foodAdapter.addFood(id)
+            let form = document.getElementById("add-food-form")
+            form.hidden = true
+
+        }    
     }
 
     static findById(id){
@@ -109,6 +122,28 @@ class Trip {
         this.date = date
         this.image = image
         this.fullRender()
-
     }
+
+    ///add form to add food to this.element
+
+    addFoodForm(id){
+        //debugger
+        let trip = Trip.findById(id)
+        const divAddFoodForm = document.createElement("div")
+        divAddFoodForm.id = 'add-food-form'
+        divAddFoodForm.innerHTML =`
+        <label>Name:</label>
+        <input type="text" name="name" value="" placeholder = "Enter a name..." class="input-name" id="food-name"/><br>
+        <label>Price:</label>
+        <input type="text" name="price" value="" placeholder = "Enter the price..." class="input-price" id="food-price"/><br>
+        <label>Rating:</label>
+        <input type="text" name="rating" value="" placeholder = "Rating between 1-5..." class="input-rating" id="food-rating"/><br>
+        <label>Description:</label>
+        <input type="text" name="description" value="" placeholder = "Short descriprion..." class="input-description" id="food-description"/><br>
+        `
+        trip.element.append(divAddFoodForm)
+    }
+
+    
+
 }  

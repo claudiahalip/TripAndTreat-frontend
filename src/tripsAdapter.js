@@ -42,7 +42,7 @@ class TripsAdapter{
             let newTrip = new Trip(json)
             newTrip.attachToDom()
         }) 
-        tripForm.reset()
+        tripForm.reset() 
     }
 
 
@@ -81,6 +81,7 @@ class TripsAdapter{
 
     //delete trip
     deleteTrip(id){
+        //debugger
         let configObj = {
             method: "DELETE",
             headers: {
@@ -94,5 +95,7 @@ class TripsAdapter{
             alert(json.message)
         })
     }
+
+
 }
 
