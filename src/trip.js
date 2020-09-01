@@ -33,9 +33,18 @@ class Trip {
         <button class ="delete" id="${this.id}">Delete Trip</button>
         <img src="${this.image}" class="trip-image" data-id="${this.id}">
         <button class ="add-food" id="${this.id}">Add Food</button>
-        
         `
         return this.element
+    }
+
+    updateTripOnDom({location,country,date,image, food}){
+        this.location = location
+        this.country = country
+        this.date = date
+        this.image = image
+        this.fullRender()
+        this.attachFoodsToTrip(food)
+
     }
     
     attachFoodsToTrip(arrFoods) {
@@ -76,25 +85,31 @@ class Trip {
             e.target.className = "update"
             e.target.innerText = "Update Trip"
             tripAdapter.updateTrip(id)
+
         }else if(e.target.className === "add-food"){
             let id = e.target.id
             e.target.className = "save-food"
             e.target.innerText = "Save Food"
             this.addFoodForm(id)
+            //foodForm.reset()
         }else if(e.target.className === "save-food"){
             let id = e.target.id
+            //debugger
             e.target.className = "add-food"
             e.target.innerText = "Add Food"
             foodAdapter.addFood(id)
-            let form = document.getElementById("add-food-form")
-            form.hidden = true
-
-        }    
+            let foodForm = document.getElementById('add-food-form');
+            //debugger
+            //foodForm.reset()
+            foodForm.hidden = true
+        }   
     }
 
     static findById(id){
         return Trip.all.find(t => t.id == id)
     }
+
+    
       
     addTripFieldsForUpdate(id){
         let trip = Trip.findById(id)
@@ -116,22 +131,17 @@ class Trip {
         trip.element.append(updateFormDiv)
     }
 
-    updateTripOnDom({location,country,date,image}){
-        this.location = location
-        this.country = country
-        this.date = date
-        this.image = image
-        this.fullRender()
-    }
+    
 
     ///add form to add food to this.element
 
     addFoodForm(id){
         //debugger
         let trip = Trip.findById(id)
-        const divAddFoodForm = document.createElement("div")
-        divAddFoodForm.id = 'add-food-form'
-        divAddFoodForm.innerHTML =`
+        const addFoodForm = document.createElement("form")
+        addFoodForm.id =`add-food-form`
+        addFoodForm.innerHTML =`
+        
         <label>Name:</label>
         <input type="text" name="name" value="" placeholder = "Enter a name..." class="input-name" id="food-name"/><br>
         <label>Price:</label>
@@ -140,8 +150,9 @@ class Trip {
         <input type="text" name="rating" value="" placeholder = "Rating between 1-5..." class="input-rating" id="food-rating"/><br>
         <label>Description:</label>
         <input type="text" name="description" value="" placeholder = "Short descriprion..." class="input-description" id="food-description"/><br>
+        
         `
-        trip.element.append(divAddFoodForm)
+        trip.element.append(addFoodForm)
     }
 
     

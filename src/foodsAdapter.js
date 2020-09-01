@@ -6,7 +6,6 @@ class FoodsAdapter {
 
     addFood(id){
         //debugger
-        //e.preventDefault()
         const name = document.getElementById("food-name").value
         const price = document.getElementById("food-price").value
         const rating = document.getElementById("food-rating").value
@@ -38,7 +37,10 @@ class FoodsAdapter {
             //debugger
             newFood.attachFoodToDom(json)
         }) 
+        // debugger
         
+        let foodForm = document.getElementById('add-food-form');
+        foodForm.reset()
     }
     
 }

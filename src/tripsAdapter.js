@@ -73,9 +73,9 @@ class TripsAdapter{
         fetch(`http://localhost:3000/trips/${id}`, configObj)
         .then(resp => resp.json())
         .then(json => {
-            
             let trip = Trip.all.find( (t)=> t.id === json.id)
             trip.updateTripOnDom(json)
+            //debugger
         })
     }
 
