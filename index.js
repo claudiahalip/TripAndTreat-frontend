@@ -2,7 +2,7 @@ const tripAdapter=new TripsAdapter;
 const foodAdapter = new FoodsAdapter;
 
 const tripForm = document.getElementById("form-add-trip");
-//const foodForm = document.getElementById('add-food-form');
+
             
 
 

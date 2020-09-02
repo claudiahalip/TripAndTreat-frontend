@@ -91,17 +91,16 @@ class Trip {
             e.target.className = "save-food"
             e.target.innerText = "Save Food"
             this.addFoodForm(id)
-            //foodForm.reset()
+            
         }else if(e.target.className === "save-food"){
             let id = e.target.id
-            //debugger
             e.target.className = "add-food"
             e.target.innerText = "Add Food"
             foodAdapter.addFood(id)
-            let foodForm = document.getElementById('add-food-form');
             //debugger
-            //foodForm.reset()
+            let foodForm = document.getElementById(`add-food-form-${id}`);
             foodForm.hidden = true
+            
         }   
     }
 
@@ -110,7 +109,6 @@ class Trip {
     }
 
     
-      
     addTripFieldsForUpdate(id){
         let trip = Trip.findById(id)
         let updateForm = `
@@ -139,17 +137,17 @@ class Trip {
         //debugger
         let trip = Trip.findById(id)
         const addFoodForm = document.createElement("form")
-        addFoodForm.id =`add-food-form`
+        addFoodForm.id =`add-food-form-${id}`
         addFoodForm.innerHTML =`
         
         <label>Name:</label>
-        <input type="text" name="name" value="" placeholder = "Enter a name..." class="input-name" id="food-name"/><br>
+        <input type="text" name="name" value="" placeholder = "Enter a name..." class="input-name" id="food-name-${id}"/><br>
         <label>Price:</label>
-        <input type="text" name="price" value="" placeholder = "Enter the price..." class="input-price" id="food-price"/><br>
+        <input type="text" name="price" value="" placeholder = "Enter the price..." class="input-price" id="food-price-${id}"/><br>
         <label>Rating:</label>
-        <input type="text" name="rating" value="" placeholder = "Rating between 1-5..." class="input-rating" id="food-rating"/><br>
+        <input type="text" name="rating" value="" placeholder = "Rating between 1-5..." class="input-rating" id="food-rating-${id}"/><br>
         <label>Description:</label>
-        <input type="text" name="description" value="" placeholder = "Short descriprion..." class="input-description" id="food-description"/><br>
+        <input type="text" name="description" value="" placeholder = "Short descriprion..." class="input-description" id="food-description-${id}"/><br>
         
         `
         trip.element.append(addFoodForm)

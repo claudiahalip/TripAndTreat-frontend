@@ -5,11 +5,11 @@ class FoodsAdapter {
     }
 
     addFood(id){
-        //debugger
-        const name = document.getElementById("food-name").value
-        const price = document.getElementById("food-price").value
-        const rating = document.getElementById("food-rating").value
-        const description = document.getElementById("food-description").value
+        debugger
+        const name = document.getElementById(`food-name-${id}`).value
+        const price = document.getElementById(`food-price-${id}`).value
+        const rating = document.getElementById(`food-rating-${id}`).value
+        const description = document.getElementById(`food-description-${id}`).value
         
         //debugger
 
@@ -37,10 +37,12 @@ class FoodsAdapter {
             //debugger
             newFood.attachFoodToDom(json)
         }) 
-        // debugger
+         //debugger
+        document.getElementById(`food-name-${id}`).value = "";
+        document.getElementById(`food-price-${id}`).value = "";
+        document.getElementById(`food-rating-${id}`).value = "";
+        document.getElementById(`food-description-${id}`).value = "";
         
-        let foodForm = document.getElementById('add-food-form');
-        foodForm.reset()
     }
     
 }
