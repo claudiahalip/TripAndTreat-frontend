@@ -3,16 +3,23 @@ const foodAdapter = new FoodsAdapter;
 
 const tripForm = document.getElementById("form-add-trip");
 
-            
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     tripAdapter.fetchTripInfo()
-    tripForm.addEventListener("submit", tripAdapter.createNewTrip)
-    
+    tripForm.addEventListener("submit", tripAdapter.createNewTrip);
+
 });
+
+
+//function handleTripsList(e){
+    //let allTrips = Trip.all 
+    //filteredTrips = allTrips.filter(trip => trip.location === e.target.value)
+    //debugger
+    //filteredTrips.forEach(trip => trip.attachToDom())
+
+//}
+    
+
+
 
 
 

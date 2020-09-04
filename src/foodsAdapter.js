@@ -5,7 +5,8 @@ class FoodsAdapter {
     }
 
     addFood(id){
-        debugger
+        //debugger
+        
         const name = document.getElementById(`food-name-${id}`).value
         const price = document.getElementById(`food-price-${id}`).value
         const rating = document.getElementById(`food-rating-${id}`).value
@@ -33,15 +34,20 @@ class FoodsAdapter {
         fetch(this.baseUrl, configObj)
         .then(resp => resp.json())
         .then(json => {
-            let newFood = new Food(json)
             //debugger
+            let newFood = new Food(json)
+            
             newFood.attachFoodToDom(json)
         }) 
-         //debugger
-        document.getElementById(`food-name-${id}`).value = "";
-        document.getElementById(`food-price-${id}`).value = "";
-        document.getElementById(`food-rating-${id}`).value = "";
-        document.getElementById(`food-description-${id}`).value = "";
+        //debugger
+        name="";
+        price="";
+        rating="";
+        description="";
+      
+
+       
+       
         
     }
     

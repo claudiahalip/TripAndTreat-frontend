@@ -39,6 +39,7 @@ class TripsAdapter{
         fetch(this.baseUrl, configObj)
         .then(resp => resp.json())
         .then(json => {
+            //debugger
             let newTrip = new Trip(json)
             newTrip.attachToDom()
         }) 
@@ -95,7 +96,10 @@ class TripsAdapter{
             alert(json.message)
         })
     }
+    
+    
 
-
+   
+    
 }
 

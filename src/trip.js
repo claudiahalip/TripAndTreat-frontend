@@ -24,15 +24,18 @@ class Trip {
     attachToDom(){
         this.tripCollection.append(this.fullRender())
         this.addEventListeners()
+        this.addEventListenerToSearch()
     }
     
     fullRender(){
+        //debugger
         this.element.innerHTML = 
         `<h2 id="${this.id}">${this.location}  -  ${this.country},  ${this.date}</h2>
         <button class ="update" id="${this.id}">Update Trip</button>
         <button class ="delete" id="${this.id}">Delete Trip</button>
         <img src="${this.image}" class="trip-image" data-id="${this.id}">
         <button class ="add-food" id="${this.id}">Add Food</button>
+       
         `
         return this.element
     }
@@ -61,10 +64,7 @@ class Trip {
         return this.element
     }
     
-    get foods(){
-        return Food.all.filter((f) => f.trip_id == this.id)
-    }
-
+    
     addEventListeners(){
         this.element.addEventListener('click', this.handleAllButtons)
     }
@@ -87,6 +87,7 @@ class Trip {
             tripAdapter.updateTrip(id)
 
         }else if(e.target.className === "add-food"){
+            //debugger
             let id = e.target.id
             e.target.className = "save-food"
             e.target.innerText = "Save Food"
@@ -97,7 +98,6 @@ class Trip {
             e.target.className = "add-food"
             e.target.innerText = "Add Food"
             foodAdapter.addFood(id)
-            //debugger
             let foodForm = document.getElementById(`add-food-form-${id}`);
             foodForm.hidden = true
             
@@ -153,6 +153,32 @@ class Trip {
         trip.element.append(addFoodForm)
     }
 
+    addFoodButton(foodId){
+        addFoodButton = document.createElement("button")
+        this.addFoodButton.innerHTML = `<button class ="add-food" id="${foodId}">Add Food</button>`
+        this.element.append(addFoodButton)
+    }
+
+    addEventListenerToSearch(){
+        let searchButton=document.getElementById("searchButton");
+        //debugger
+        searchButton.addEventListener("click", this.handleTripsList)
+    }
+
+    handleTripsList = (e)=>{
+        
+       
+        let tripsContainer = document.getElementById("trip-collection");
+        tripsContainer.innerHTML="";
+        let searchInput = document.getElementById("search-input").value
+        let filteredTrips = Trip.all.filter(trip => trip.location === searchInput)
+        filteredTrips.forEach(trip => trip.attachToDom())
+        
+    }
+    
+
+
+    
     
 
 }  
