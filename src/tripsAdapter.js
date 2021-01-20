@@ -12,7 +12,7 @@ class TripsAdapter{
             json.forEach( (trip) => {
                 let newTrip = new Trip(trip)
                 newTrip.attachToDom()
-                newTrip.attachFoodsToTrip(trip.food)
+                //newTrip.attachFoodsToTrip(trip.food)
             })
         })
     }

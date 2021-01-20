@@ -3,6 +3,18 @@ class FoodsAdapter {
     constructor(){
         this.baseUrl = "http://localhost:3000/foods"
     }
+    
+    fetchFoods(){
+        fetch(this.baseUrl)
+        .then(resp => resp.json())
+        .then(json => {
+            json.forEach(food =>{
+                let newFood = new Food(food)
+                newFood.attachFoodToDom()
+            })
+        })
+    }
+
 
     addFood(id){
         //debugger
@@ -39,16 +51,12 @@ class FoodsAdapter {
             
             newFood.attachFoodToDom(json)
         }) 
-        //debugger
-        name="";
-        price="";
-        rating="";
-        description="";
-      
-
-       
-       
-        
+        document.getElementById(`food-name-${id}`).value="";
+        document.getElementById(`food-price-${id}`).value="";
+        document.getElementById(`food-rating-${id}`).value="";  
+        document.getElementById(`food-description-${id}`).value="";
     }
+
+    
     
 }

@@ -23,6 +23,7 @@ class Trip {
 
     attachToDom(){
         this.tripCollection.append(this.fullRender())
+        this.attachFoodsToTrip()
         this.addEventListeners()
         this.addEventListenerToSearch()
     }
@@ -50,12 +51,18 @@ class Trip {
 
     }
     
-    attachFoodsToTrip(arrFoods) {
+   
+    allFoods (){
         //debugger
-        let arrFoodObj = arrFoods.map( f => new Food(f))
+        return Food.all.filter(f => f.trip_id === this.id)
+    }
+
+    attachFoodsToTrip(){
+        //debugger
+        let foodsTrip = this.allFoods()
         const p = document.createElement("p");
         p.setAttribute("class", `food-list-id-${this.id}`)
-        for(let food of arrFoodObj){
+        for(let food of foodsTrip){
             let li = document.createElement("li")
             li.innerHTML = `<b>${food.name}</b><br> <b>price: </b>$${food.price}<br> <b>rating:</b> ${food.rating}<br> <b>a brief description:</b>${food.description}`
             p.appendChild(li)
@@ -63,7 +70,6 @@ class Trip {
         this.element.appendChild(p)
         return this.element
     }
-    
     
     addEventListeners(){
         this.element.addEventListener('click', this.handleAllButtons)
@@ -92,16 +98,15 @@ class Trip {
             e.target.className = "save-food"
             e.target.innerText = "Save Food"
             this.addFoodForm(id)
-            
         }else if(e.target.className === "save-food"){
+            //debugger
             let id = e.target.id
             e.target.className = "add-food"
             e.target.innerText = "Add Food"
             foodAdapter.addFood(id)
             let foodForm = document.getElementById(`add-food-form-${id}`);
             foodForm.hidden = true
-            
-        }   
+        }
     }
 
     static findById(id){
@@ -166,19 +171,22 @@ class Trip {
     }
 
     handleTripsList = (e)=>{
-        
-       
+        //debugger
         let tripsContainer = document.getElementById("trip-collection");
-        tripsContainer.innerHTML="";
-        let searchInput = document.getElementById("search-input").value
-        let filteredTrips = Trip.all.filter(trip => trip.location === searchInput)
-        filteredTrips.forEach(trip => trip.attachToDom())
-        
+        if(e.target.className === "search-trip"){
+            e.target.className = "backToAll";
+            e.target.innerText = "All Trips";
+            tripsContainer.innerHTML="";
+            let searchInput = document.getElementById("search-input").value;
+            let filteredTrips = Trip.all.filter(trip => trip.location.toLowerCase() === searchInput.toLowerCase());
+            filteredTrips.forEach(trip => {
+                trip.attachToDom();
+            });
+        }
+        else if (e.target.className === "backToAll"){
+            e.target.className = "search-trip";
+            e.target.innerText = "Search";
+            Trip.all.forEach(trip => trip.attachToDom());
+        }
     }
-    
-
-
-    
-    
-
 }  
