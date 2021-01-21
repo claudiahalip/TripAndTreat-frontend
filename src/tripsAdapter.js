@@ -90,7 +90,7 @@ class TripsAdapter{
                 Accept: "application/json"
             }
         }
-        fetch( `http://localhost:3000/trips/${id}`, configObj)
+        fetch( `https://arcane-atoll-80428.herokuapp.com/trips/${id}`, configObj)
         .then(resp => resp.json())
         .then(json => {
             alert(json.message)
