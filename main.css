@@ -27,11 +27,12 @@ body {
   }
   
   .card {
+    
     text-align: center;
     border: grey solid 1px;
     padding: 1rem;
     width: 22rem;
-    height: 55rem;
+    height: 45rem;
     display: inline-grid;
     margin: 2rem 2rem;
     box-shadow: 3px 4px #a0b4d8;
@@ -75,7 +76,7 @@ body {
   }
   .trip-form-title{
     text-align: center;
-    color:#4b7fe0;
+    color:white;
     font-size:25px;
     
   }
