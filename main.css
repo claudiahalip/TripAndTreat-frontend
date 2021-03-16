@@ -31,7 +31,7 @@ body {
     border: grey solid 1px;
     padding: 1rem;
     width: 22rem;
-    height: 70rem;
+    height: 55rem;
     display: inline-grid;
     margin: 2rem 2rem;
     box-shadow: 3px 4px #a0b4d8;
@@ -49,7 +49,6 @@ body {
   }
   
   button {
-    display: flex;
     position: relative;
     background-color:#4b7fe0;
     border: none;
@@ -59,7 +58,6 @@ body {
     color: whitesmoke;
     font-size: 12px;
     justify-self: center ;
-    margin: 5px;
   }
   
   button:hover {
@@ -129,10 +127,11 @@ body {
     margin: 3px;
   }
 
-  #updatebButton, #deleteBuutton {display: flex;}
+  /* #updatebButton, #deleteButton {display: inline;}
+  
   .addFoodButton, .upadteFoodButton, .deleteFoodButton{
     display: inline;
-  }
+  } */
 
   #search-form{
     margin: 0px 500px 10px 545px;
