@@ -31,10 +31,11 @@ body {
     border: grey solid 1px;
     padding: 1rem;
     width: 22rem;
-    height: auto;
+    height: 70rem;
     display: inline-grid;
     margin: 2rem 2rem;
-    box-shadow: 3px 4px #4b7fe0
+    box-shadow: 3px 4px #a0b4d8;
+    border-radius: 10px;
   }
 
   h2 {
@@ -48,6 +49,7 @@ body {
   }
   
   button {
+    display: flex;
     position: relative;
     background-color:#4b7fe0;
     border: none;
@@ -56,10 +58,8 @@ body {
     width: 100px;
     color: whitesmoke;
     font-size: 12px;
-    display: inline-block;
     justify-self: center ;
-    
-    
+    margin: 5px;
   }
   
   button:hover {
