@@ -31,7 +31,7 @@ body {
     border: grey solid 1px;
     padding: 1rem;
     width: 22rem;
-    height: 50rem;
+    height: auto;
     display: inline-grid;
     margin: 2rem 2rem;
     box-shadow: 3px 4px #4b7fe0
@@ -96,6 +96,10 @@ body {
     border-radius: 10px;
     border-style: none;
   }
+  .add-card > label{
+    font-family: avenir;
+    color: rgb(41, 40, 40);
+  }
   
   .submit {
     position: relative;
@@ -125,22 +129,22 @@ body {
     margin: 3px;
   }
 
-  #updatebButton, #deleteBuutton {display: inline;}
+  #updatebButton, #deleteBuutton {display: flex;}
   .addFoodButton, .upadteFoodButton, .deleteFoodButton{
     display: inline;
   }
 
   #search-form{
-    margin: 0px 500px 10px 500px;
+    margin: 0px 500px 10px 545px;
   }
 
   #search-input {
     height: 35px;
     width: 200px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     border: 1px solid #4b7fe0;
-    bo
+    
   }
 
 
