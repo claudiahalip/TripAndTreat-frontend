@@ -118,7 +118,7 @@ class Trip {
         let trip = Trip.findById(id)
         let updateForm = `
         <label>Location:</label>
-        <input type="text" value="${trip.location}" name = "location" id = 'update-trip-location-${id}'>
+        <input type="text"  value="${trip.location}" name = "location" id = 'update-trip-location-${id}'>
         <label>Country:</label>
         <input type="text" value="${trip.country}" name="country" id = "update-trip-country-${id}">
         <label>Date:</label>

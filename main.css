@@ -52,8 +52,8 @@ body {
     background-color:#4b7fe0;
     border: none;
     border-radius: 5px;
-    height: .95rem;
-    width: max-content;
+    height: 30px;
+    width: 100px;
     color: whitesmoke;
     font-size: 12px;
     display: inline-block;
@@ -63,9 +63,8 @@ body {
   }
   
   button:hover {
-    background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
+    background-color: orange;
+    color: #4b7fe0;
   }
   
   .container {
@@ -76,9 +75,26 @@ body {
     background: #515DA2;
     opacity: .8;
   }
+  .trip-form-title{
+    text-align: center;
+    color:#4b7fe0;
+    font-size:25px;
+    
+  }
   
   .add-card {
-    width: 80%
+    background-color:#b7c7e4;
+    align-items: center;
+    position: relative;
+    margin: 50px 500px 50px 500px;
+    padding: 30px;
+  }
+  .add-card > input{
+    height: 35px;
+    width: 100%;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
   }
   
   .submit {
@@ -95,9 +111,8 @@ body {
   }
   
   .submit:hover {
-    background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
+    background-color: orange;
+    color: #4b7fe0;
   }
   
   
@@ -106,7 +121,7 @@ body {
     height: 2rem;
     width: 60%;
     font-size: 18px;
-    font-family: monospace;
+    font-family: avenir;
     margin: 3px;
   }
 
@@ -114,4 +129,19 @@ body {
   .addFoodButton, .upadteFoodButton, .deleteFoodButton{
     display: inline;
   }
+
+  #search-form{
+    margin: 0px 500px 10px 500px;
+  }
+
+  #search-input {
+    height: 35px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #4b7fe0;
+    bo
+  }
+
+
   
