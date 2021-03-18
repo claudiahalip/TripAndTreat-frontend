@@ -1,4 +1,4 @@
-const tripAdapter = new TripsAdapter;
+const tripAdapter=new TripsAdapter;
 const foodAdapter = new FoodsAdapter;
 
 const tripForm = document.getElementById("form-add-trip");
