@@ -65,18 +65,18 @@
     background-color:#4b7fe0;
     border: none;
     border-radius: 5px;
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    width: 200px;
     color: whitesmoke;
     font-size: 14px;
     font-family: avenir;
     justify-self: center ;
   }
   
-  /* button:hover {
+  button:hover {
     background-color: orange;
     color: #4b7fe0;
-  } */
+  }
   
   /* .container {
     padding: 1rem;
