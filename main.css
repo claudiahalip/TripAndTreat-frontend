@@ -141,11 +141,11 @@ body {
     margin: 3px;
   }
 
-  /* #updatebButton, #deleteButton {display: inline;}
+  #updatebButton, #deleteButton {display: inline;}
   
   .addFoodButton, .upadteFoodButton, .deleteFoodButton{
     display: inline;
-  } */
+  }
 
   #search-form{
     margin: 0px 500px 10px 545px;
@@ -159,6 +159,7 @@ body {
     border: 1px solid #4b7fe0;
     
   }
+
   li{
     color: rgb(77, 75, 75);
     font-family: avenir;
