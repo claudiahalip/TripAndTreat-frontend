@@ -1,6 +1,7 @@
 class TripsAdapter{
 
     constructor(){
+        // this.baseUrl = "http://localhost:3000/trips"
         this.baseUrl = "https://arcane-atoll-80428.herokuapp.com/trips"
     }
 

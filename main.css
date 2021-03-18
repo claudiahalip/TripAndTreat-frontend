@@ -45,7 +45,7 @@ body {
     width: 22rem;
     height: 58rem;
     display: inline-grid;
-    margin: 2rem 2rem;
+    margin: 1rem 1rem;
     box-shadow: 3px 4px #a0b4d8;
     border-radius: 10px;
   }
@@ -88,7 +88,7 @@ body {
   }
   .trip-form-title{
     text-align: center;
-    color:white;
+    color:#4b7fe0;;
     font-size:25px;
     
   }
@@ -147,14 +147,14 @@ body {
     display: inline;
   }
 
-  #search-form{
+  .search-form{
     margin: 0px 500px 10px 545px;
   }
 
   #search-input {
     height: 35px;
     width: 200px;
-    margin: 5px;
+    margin: 5px 5px 5px 550px;
     border-radius: 10px;
     border: 1px solid #4b7fe0;
     
