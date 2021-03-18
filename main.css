@@ -19,23 +19,23 @@
     color: grey;
   }
   
-  /* #trip-header {
+  #trip-header {
     display: flex;
     justify-content: center;
     background: #515DA2;
     opacity: .8;
     height: 7rem;
     padding: 1rem;
-  } */
+  }
   
-  /* #trip-header img {
+  #trip-header img {
     height: 6rem;
     width: auto;
-  } */
+  }
   
-  /* #trip-collection {
+  #trip-collection {
     margin: 2rem;
-  } */
+  }
   
   /* .card {
     background-color: rgba(255, 255, 255, 0.774);
