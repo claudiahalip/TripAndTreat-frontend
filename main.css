@@ -1,7 +1,7 @@
-body {
+/* body {
     margin: 0;
     font-family: roboto;
-  }
+  } */
 
   background{
    
@@ -19,25 +19,25 @@ body {
     color: grey;
   }
   
-  #trip-header {
+  /* #trip-header {
     display: flex;
     justify-content: center;
     background: #515DA2;
     opacity: .8;
     height: 7rem;
     padding: 1rem;
-  }
+  } */
   
-  #trip-header img {
+  /* #trip-header img {
     height: 6rem;
     width: auto;
-  }
+  } */
   
-  #trip-collection {
+  /* #trip-collection {
     margin: 2rem;
-  }
+  } */
   
-  .card {
+  /* .card {
     background-color: rgba(255, 255, 255, 0.774);
     text-align: center;
     border: grey solid 1px;
@@ -48,19 +48,19 @@ body {
     margin: 1rem 1rem;
     box-shadow: 3px 4px #a0b4d8;
     border-radius: 10px;
-  }
+  } */
 
-  h2 {
+  /* h2 {
       position: center;
-  }
+  } */
   
-  .trip-image {
+  /* .trip-image {
     justify-self: center;
     height: 12rem;
     width: auto;
-  }
+  } */
   
-  button {
+  /* button {
     position: relative;
     background-color:#4b7fe0;
     border: none;
@@ -71,50 +71,50 @@ body {
     font-size: 14px;
     font-family: avenir;
     justify-self: center ;
-  }
+  } */
   
-  button:hover {
+  /* button:hover {
     background-color: orange;
     color: #4b7fe0;
-  }
+  } */
   
-  .container {
+  /* .container {
     padding: 1rem;
     width: stretch;
     height: auto;
     display: none;
     background: #515DA2;
     opacity: .8;
-  }
-  .trip-form-title{
+  } */
+  /* .trip-form-title{
     text-align: center;
     color:#4b7fe0;;
     font-size:25px;
     
-  }
+  } */
   
-  .add-card {
+  /* .add-card {
     background-color:#b7c7e4;
     align-items: center;
     position: relative;
     margin: 30px 500px 30px 400px;
     padding: 30px;
     width: 500px;
-  }
-  .add-card > input{
+  } */
+  /* .add-card > input{
     height: 35px;
     width: 100%;
     margin: 10px;
     border-radius: 10px;
     border-style: none;
-  }
-  .add-card > label{
+  } */
+  /* .add-card > label{
     font-family: avenir;
     color: rgb(41, 40, 40);
     margin: 10px;
-  }
+  } */
   
-  .submit {
+  /* .submit {
     position: relative;
     background-color:#4b7fe0;
     border-radius: 5px;
@@ -125,46 +125,46 @@ body {
     justify-self: center;
     font-family: avenir;
     margin: 3px;
-  }
+  } */
   
-  .submit:hover {
+  /* .submit:hover {
     background-color: orange;
     color: #4b7fe0;
-  }
+  } */
   
   
-  .input-text {
+  /* .input-text {
     border-radius: 5px;
     height: 2rem;
     width: 60%;
     font-size: 18px;
     font-family: avenir;
     margin: 3px;
-  }
+  } */
 
-  #updatebButton, #deleteButton {display: inline;}
+  /* #updatebButton, #deleteButton {display: inline;}
   
   .addFoodButton, .upadteFoodButton, .deleteFoodButton{
     display: inline;
-  }
+  } */
 
-  .search-form{
+  /* .search-form{
     margin: 0px 500px 10px 545px;
-  }
+  } */
 
-  #search-input {
+  /* #search-input {
     height: 35px;
     width: 200px;
     margin: 5px 5px 5px 550px;
     border-radius: 10px;
     border: 1px solid #4b7fe0;
     
-  }
+  } */
 
-  li{
+  /* li{
     color: rgb(77, 75, 75);
     font-family: avenir;
-  }
+  } */
 
   
  
