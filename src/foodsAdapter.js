@@ -1,8 +1,8 @@
 class FoodsAdapter {
 
     constructor(){
-        this.baseUrl = "http://localhost:3000/foods"
-        // this.baseUrl = "https://arcane-atoll-80428.herokuapp.com/foods"
+        // this.baseUrl = "http://localhost:3000/foods"
+        this.baseUrl = "https://arcane-atoll-80428.herokuapp.com/foods"
     }
     
     fetchFoods(){
