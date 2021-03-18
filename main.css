@@ -60,7 +60,7 @@
     width: auto;
   }
   
-  /* button {
+  button {
     position: relative;
     background-color:#4b7fe0;
     border: none;
@@ -71,7 +71,7 @@
     font-size: 14px;
     font-family: avenir;
     justify-self: center ;
-  } */
+  }
   
   /* button:hover {
     background-color: orange;
