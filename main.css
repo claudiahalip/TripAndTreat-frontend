@@ -95,7 +95,7 @@
   }
   
   .add-card {
-    background-color:#b7c7e4;
+    background-color:#7491c779;
     align-items: center;
     position: relative;
     margin: 30px 500px 30px 400px;
@@ -156,7 +156,7 @@
   #search-input {
     height: 35px;
     width: 200px;
-    margin: 5px 5px 5px 500px;
+    margin: 5px 5px 5px 450px;
     border-radius: 10px;
     border: 1px solid #4b7fe0;
     

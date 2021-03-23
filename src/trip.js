@@ -75,7 +75,7 @@ class Trip {
         this.element.addEventListener('click', this.handleAllButtons)
     }
 
-    handleAllButtons = (e)=>{
+    handleAllButtons = (e) => {
         if (e.target.className === "delete"){
             let id = e.target.id
             tripAdapter.deleteTrip(id)
